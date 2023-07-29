@@ -18,6 +18,26 @@ Class authentication_model extends CI_Model{
             return false;
         }
     }
+
+    public function register_user(){
+        $data = array(
+            "username" => $this->input->post("username"),
+            "password" => $this->input->post("pass")
+        );
+
+        return $this->db->insert("users", $data);
+    }
+
+    public function is_user(){
+        $user = $this->input->post("username");
+        $query = $this->db->get_where("users", array("username" => $user));
+
+        if($query->num_rows() > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
 
 ?>

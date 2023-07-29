@@ -1,4 +1,4 @@
-<h2><?php echo $title; ?></h2>
+<h2><?= $title; ?></h2>
 
 <?php echo validation_errors(); ?> <!-- Retorna todos los errores asociaciados al 
                                         form submission-->
@@ -13,5 +13,4 @@
     <textarea name="text"></textarea><br />
 
     <input type="submit" name="submit" value="Create news item" />
-
-</form>
+<?php echo form_close(); ?>

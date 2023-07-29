@@ -39,6 +39,8 @@ class News_model extends CI_Model {
         public function update_new($slug = NULL){
                 $this->load->helper('url');
 
+                $slug = url_title($this->input->post(), "dash", true);
+
                 $data = array(
                         'title' => $this->input->post('title'),
                         'slug' => $slug,
@@ -53,5 +55,14 @@ class News_model extends CI_Model {
                 return $this->db->delete('news', array('slug' => $slug));
         }
 }
+
+$this->db->insert("table", $data);
+$this->db->get_where("table", $data);
+$this->db->get("table");
+$this->db->delete("table", $data);
+$this->db->where('slug', $slug);
+$this->db->update("table", $data);
+$query->result_array();
+$query->row_array();
 
 ?>

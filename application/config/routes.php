@@ -56,4 +56,6 @@ $route['news/(:any)'] = 'news/view/$1';
 $route['news'] = 'news';
 $route['default_controller'] = 'pages/view';
 $route['authentication/login'] = 'authentication/login';
+$route['authentication/register'] = 'authentication/register';
+$route['authentication/register/(:any)'] = 'authentication/register/$1';
 $route['(:any)'] = 'pages/view/$1';
